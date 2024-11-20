@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "ともすた",
+  title: "よぐぜ",
   description: "ともすたの公式サイトです",
 };
 

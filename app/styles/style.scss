@@ -1,5 +1,10 @@
+body {
+  color: white;
+}
+
 .container {
-    h1 {
-      color: red;
-    }
-  }
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/OIP.jpg");
+  background-size: cover;
+  background-position: center;
+}

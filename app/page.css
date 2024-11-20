@@ -1,0 +1,333 @@
+* {
+  box-sizing: border-box; /* パディングとボーダーを含めたサイズ計算 */
+}
+
+body {
+    color: black;
+    background-color: white;
+    word-break: break-all; 
+  }
+
+/* スマホ用のレスポンシブデザイン */
+
+header{
+  color:white;
+  background-color:greenyellow;
+  background-size:cover;
+  padding-left: 20px;
+  padding-right:20px;
+  padding-top:20px;
+  padding-bottom:20px;
+  display: flex;
+  width: 100%;
+  position: fixed; /* 位置を固定 */
+  top: 0; /* 画面上部に配置 */
+  left: 0;
+  z-index: 1000; /* 他の要素よりも前面に表示 */
+  animation: fadein-header 1.8s ease-in-out; /* Animation duration: 2 seconds */
+}
+
+@media (max-width: 768px) {
+  header{
+  padding-left: 15px;
+  padding-right:15px;
+  padding-top:15px;
+  padding-bottom:15px;
+  background-size:cover;
+  }
+  .navbar-left a, .navbar-right a {
+    font-size: 16px; /* ボタン内の文字サイズを小さく */
+  }
+}
+
+/* 450px以下の画面幅の場合のレスポンシブデザイン */
+@media (max-width: 450px) {
+  header{
+  padding-left: 6px;
+  padding-right:6px;
+  padding-top:6px;
+  padding-bottom:6px;
+  background-size:cover;
+  }
+  .navbar-left a, .navbar-right a {
+    font-size: 12px; /* ボタン内の文字サイズを小さく */
+  }
+}
+
+@keyframes fadein-header {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px); /* Start slightly above */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* End at original position */
+  }
+}
+
+.navbar-left {
+  position: relative; /* 絶対位置指定を解除 */
+  justify-content: flex-start; /* 左寄せ */
+}
+
+.b1{
+  font-size:30px;
+}
+
+.navbar-right {
+  position: absolute; /* 絶対位置指定 */
+  right: 50px; /* 右から20pxの位置に配置 */
+}
+
+.navbar-left a, .navbar-right a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.navbar-left a:hover{
+  color:#007bff;
+}
+
+.container {
+    padding-top: 70px; /* ヘッダーの高さ分の余白を追加 */
+    padding-bottom:100px;
+    background-image: url("/light-1.jpg");
+    background-size:cover;
+    background-position: center;
+    width:95%;
+    margin:auto;
+  }
+  
+  .title{
+  text-align:center;
+
+}
+
+@keyframes slidein-intro {
+  0% {
+      opacity: 0;
+      transform: translateX(-100%); /* 左端から開始 */
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* 元の位置に移動 */
+  }
+}
+
+.introduction {
+  margin: 10px auto;
+  text-align: center;
+  background-color:  rgba(255, 255, 255, 0.8); /* 半透明で見やすく */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: black;
+  width: 75%;
+  opacity: 0; /* 初期状態を透明に */
+  animation: slidein-intro 2s ease-in-out forwards; /* アニメーションの適用 */
+}
+
+.cube{
+  width:60%;
+  height:auto;
+}
+
+  .concept{
+    font-weight:bold;
+    font-size:35px;
+  }
+
+  
+  .profile {
+    background-image: url('/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* 相対位置を指定して背景を維持 */
+    margin:auto;
+    width:95%;
+}
+
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明で見やすく */
+    padding: 5%;
+    margin:5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    width:70%;
+    margin: auto;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.profile-container.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.profile-title{
+  font-size:35px;
+  font-weight: bold;
+  text-align:center;
+}
+
+.profile-p{
+  font-size:18px;
+}
+
+.hobby{
+    background-image: url('/pokemon.jpg'); /* 画像ファイルを背景として設定 */
+    background-size: cover; /* 画像をコンテナ全体にカバー */
+    background-position: center; /* 中心位置 */
+    padding: 20px; /* セクション全体に適度な余白を追加 */
+    border-radius: 10px; /* 丸みを持たせたデザイン */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
+    margin: 20px auto; /* 自動的に中央揃え */
+    width:95%;
+  
+}
+
+.hobby-container{
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明で見やすく */
+  padding: 20px; /* セクション全体に適度な余白を追加 */
+  border-radius: 10px; /* 丸みを持たせたデザイン */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
+  margin: 20px auto; /* 自動的に中央揃え */
+  width:75%;
+  color: #333; /* 読みやすい濃いグレーの文字色 */
+  opacity: 0; /* 初期状態は透明 */
+  transform: translateX(-100%); /* 左から始める位置 */
+  transition: opacity 2s ease, transform 2s ease; /* トランジション設定 */
+}
+
+.hobby-container.animate {
+  opacity: 1;
+  transform: translateX(0); /* 元の位置に移動 */
+}
+
+.hobby-title {
+  font-size: 35px; /* タイトルを目立たせる大きさ */
+  font-weight: bold; /* 太字で強調 */
+  text-align: center; /* 中央揃え */
+  margin-bottom: 20px; /* 下部に余白 */
+}
+
+.hobby-p {
+  font-size: 18px; /* 適度な大きさのフォント */
+  line-height: 1.6; /* 読みやすい行間 */
+  margin-bottom: 15px; /* 各段落間に余白 */
+}
+
+.hobby-container a {
+  color:purple; 
+  text-decoration: underline; /* 常に下線を表示 */
+}
+
+.hobby-container a:hover {
+  color: blue; /* ホバー時に青色に変更 */
+}
+
+.news{
+  background-image: url('/news.jpg'); /* 画像ファイルを背景として設定 */
+  background-size: cover; /* 画像をコンテナ全体にカバー */
+  background-position: center; /* 中心位置 */
+  padding: 20px; /* セクション全体に適度な余白を追加 */
+  border-radius: 10px; /* 丸みを持たせたデザイン */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
+  margin:auto; /* 自動的に中央揃え */
+  width:95%;
+}
+
+@keyframes slidein-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* 右から開始 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 元の位置に移動 */
+  }
+}
+
+.note-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  width: 75%;
+  color: #333;
+  opacity: 0;
+  transform: translateX(100%); /* 初期状態は右に移動した状態 */
+  transition: opacity 2s ease, transform 2s ease; /* トランジション設定 */
+}
+
+.note-container.animate {
+  opacity: 1;
+  transform: translateX(0); /* 元の位置に移動 */
+}
+
+.note-title {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.note-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.works{
+  background-image: url('/works.jpg');
+  background-size: cover; /* 画像をコンテナ全体にカバー */
+  background-position: center; /* 中心位置 */
+  width:95%;
+}
+
+@keyframes slidein-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); /* 左から開始 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* 元の位置に移動 */
+  }
+}
+
+.works-container{
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  width: 75%;
+  color: #333;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.works-container.animate {
+  opacity:1;
+  animation: slidein-from-left 1s forwards; /* アニメーション適用 */
+}
+
+.b2{
+  color:purple; 
+  text-decoration: underline; /* 常に下線を表示 */
+}
+
+.b2:hover{
+  color:#007bff;
+}
